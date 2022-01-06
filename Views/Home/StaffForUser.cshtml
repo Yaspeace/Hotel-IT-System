@@ -1,0 +1,44 @@
+﻿@model StaffModel
+@{
+    if (ViewBag.Entered)
+        Layout = "~/Views/Shared/_Layout2.cshtml";
+    else
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.openedView = "index";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link type="text/css" rel="stylesheet" href="@Url.Content("~/css/site.css")" />
+    <title>Администратор|Сотрудники</title>
+</head>
+<body>
+    <div align="center">
+        <font class="lead-black">Информация о сотрудниках отеля:</font>
+    </div>
+    <div class="flowed-table" style="height: 500px;margin-top:1em;border: 3px solid black;">
+        <table class="inform">
+            <thead>
+                <tr>
+                    <td>ФИО</td>
+                    <td>Должность</td>
+                    <td>Дата начала работы</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var s in Model.Staff)
+                {
+                    <tr>
+                        <td>@s.fio</td>
+                        <td>@Model.GetPosition(s)</td>
+                        <td>@s.employment_date.ToString()</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

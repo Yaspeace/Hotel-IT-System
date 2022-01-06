@@ -1,0 +1,50 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link type="text/css" rel="stylesheet" href="@Url.Content("~/css/site.css")" />
+    <title>Администратор|Личный кабинет</title>
+</head>
+<body>
+    <div align="center"><font class="index-font1" style="color: black;">Добро пожаловать, @ViewBag.cur_user_name @ViewBag.cur_user_patronym!</font></div>
+    <div align="center">
+        <ul>
+            <li class="admin-menu"><a class="admin-menu" href="/Home/Index">Вернуться на сайт</a></li>
+            <li class="admin-menu"><a class="admin-menu" href="/Home/Staff">Сотрудники</a></li>
+            <li class="admin-menu"><a class="admin-menu" href="/Home/BookingTable">Бронирования</a></li>
+            <li class="admin-menu"><a class="admin-menu" href="/Home/ServiceTable">Услуги</a></li>
+        </ul>
+    </div>
+    <div align="center">
+        <font class="lead-black">Статистические диаграммы плотности заселённости и уровня доходов за @(ViewBag.Year - 1) - @ViewBag.Year год:</font>
+    </div>
+    <div>
+            <table class="inform" style="width: 100%;">
+                <thead>
+                    <tr>
+                        <td>Месяц</td>
+                        <td>Доход за этот год</td>
+                        <td>Доход за прошлый год</td>
+                        <td>Заселённость за этот год</td>
+                        <td>Заселённость за прошлый год</td>
+                    </tr>
+                </thead>
+                @foreach (var record in ViewBag.Summs)
+                {
+                    <tr>
+                        <td>@record.Key</td>
+                        <td>@record.Value[0]</td>
+                        <td>@record.Value[1]</td>
+                        <td>@ViewBag.Counts[record.Key][0]</td>
+                        <td>@ViewBag.Counts[record.Key][1]</td>
+                    </tr>
+                }
+            </table>
+    </div>
+</body>
+</html>

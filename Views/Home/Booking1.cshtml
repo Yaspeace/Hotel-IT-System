@@ -1,0 +1,45 @@
+﻿@{
+    if (ViewBag.Entered)
+        Layout = "~/Views/Shared/_Layout2.cshtml";
+    else
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.openedView = "booking";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link type="text/css" rel="stylesheet" href="@Url.Content("~/css/site.css")" />
+    <title>Бронирование</title>
+</head>
+<body>
+    <div align="center"><font class="upmenu">Добро пожаловать на страницу бронирования номеров нашего отеля!</font></div>
+
+    <!--Выбор дат и категории-->
+    <form method="post" action="/Home/Booking2">
+        <div id="first" class="booking-backgr" style="margin-bottom: 15px;">
+            <div style="padding: 1em 1em 1em 1em;margin-left: 2em;">
+                <div id="test"></div>
+                <font class="lead-black">Дата въезда:&nbsp;</font>
+                <input name="check_in" class="booking-input" type="date" min="@DateTime.Now.ToString("yyyy-MM-dd")" value="@DateTime.Now.ToString("yyyy-MM-dd")">
+                <font class="lead-black">&nbsp;Дата выезда:&nbsp;</font>
+                <input name="check_out" class="booking-input" type="date" min="@DateTime.Now.ToString("yyyy-MM-dd")" value="@DateTime.Now.ToString("yyyy-MM-dd")">
+                <font class="lead-black">&nbsp;Категория:&nbsp;</font>
+                <select name="category" id="catsel" class="booking-input" style="width: 15%;">
+                    <option value="5">Президентский люкс</option>
+                    <option value="4">Люкс</option>
+                    <option value="3">Комфорт плюс</option>
+                    <option value="2">Комфорт</option>
+                    <option value="1">Эконом</option>
+                </select>
+                <div style="margin-top: 1em;">
+                    <input class="enter-btn" style="margin-left: 1em;" type="submit" value="Продолжить" />
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
+

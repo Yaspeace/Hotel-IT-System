@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Images\Bumazhniy.jpg" />
+    <None Include="wwwroot\Images\Dobriy.jpg" />
+    <None Include="wwwroot\Images\emblem admin.png" />
+    <None Include="wwwroot\Images\emblem support.png" />
+    <None Include="wwwroot\Images\emblem user.png" />
+    <None Include="wwwroot\Images\emblem.png" />
+    <None Include="wwwroot\Images\hotel.png" />
+    <None Include="wwwroot\Images\Vazhniy.jpg" />
+    <None Include="wwwroot\Images\Zlydnya.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="5.0.10" />
+  </ItemGroup>
+
+</Project>

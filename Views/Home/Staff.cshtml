@@ -1,0 +1,57 @@
+﻿@model StaffModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link type="text/css" rel="stylesheet" href="@Url.Content("~/css/site.css")" />
+    <title>Администратор|Сотрудники</title>
+</head>
+<body>
+    <div style="margin: 1.5em 0 1.5em 0;">
+        <a class="enter-btn" href="/Home/AdminLK">&#8592;Назад</a>
+    </div>
+    <div align="center">
+        <font class="lead-black">Информация о сотрудниках отеля:</font>
+    </div>
+    <div align="center" style="margin-top: 20px;">
+        <font class="lead-black">Поиск по ФИО:</font><input type="text" class="register" style="font-size: 20px;" />
+    </div>
+    <div class="flowed-table" style="height: 500px;margin-top:1em;border: 3px solid black;">
+        <table class="inform">
+            <thead>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>Табельный №</td>
+                    <td>ФИО</td>
+                    <td>Должность</td>
+                    <td>Дата начала работы</td>
+                    <td>Дата увольнения</td>
+                    <td>Статус</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var s in Model.Staff)
+                {
+                <tr>
+                    <td><a href="#"><img src="@Url.Content("~/Images/redakt.png")" alt="" /></a><a href="#"><img src="@Url.Content("~/Images/urna.png")" alt="" /></a></td>
+                    <td>@s.tabel</td>
+                    <td>@s.fio</td>
+                    <td>@Model.GetPosition(s)</td>
+                    <td>@s.employment_date.ToString()</td>
+                    <td>@(s.fire_date == null ? "-" : s.fire_date.ToString())</td>
+                    <td>@s.status</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div align="center" style="margin-top: 2em;">
+        <a class="enter-btn" style="background-color: rgb(252, 170, 127);" href="#">Отменить</a>&nbsp;&nbsp;&nbsp;<a class="enter-btn" href="#">Сохранить</a>
+    </div>
+</body>
+</html>

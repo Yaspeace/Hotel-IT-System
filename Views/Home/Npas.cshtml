@@ -1,0 +1,26 @@
+﻿@{
+    if (ViewBag.Entered)
+        Layout = "~/Views/Shared/_Layout2.cshtml";
+    else
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.openedView = "index";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link type="text/css" rel="stylesheet" href="@Url.Content("~/css/site.css")" />
+    <title>Гостиница "Lord of the winds"</title>
+</head>
+<body>
+    <div align="center" style="height: 400px;">
+        <div><a href="http://publication.pravo.gov.ru/Document/View/0001202011200034">Об утверждении правил предоставления гостиничных услуг в Российской Федерации</a></div>
+        <div><a href="http://www.consultant.ru/law/hotdocs/65864.html/">Порядок оказания гостиничных услуг</a></div>
+        <div><a href="http://www.consultant.ru/document/cons_doc_LAW_61801/">Закон о персональных данных</a></div>
+        <div><a href="http://www.consultant.ru/document/cons_doc_LAW_305/">О защите прав потребителей</a></div>
+        <div><a href="https://normativ.kontur.ru/document?moduleId=1&documentId=380360&cwi=0&utm_source=google&utm_medium=organic&utm_referer=www.google.com&utm_startpage=kontur.ru%2Farticles%2F1471&utm_orderpage=kontur.ru%2Farticles%2F1471">О применении контрольно-кассовой техники при осуществлении расчётов</a></div>
+    </div>
+</body>
+</html>

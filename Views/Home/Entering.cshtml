@@ -1,0 +1,44 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link type="text/css" rel="stylesheet" href="@Url.Content("~/css/site.css")" />
+    <title>Вход|Личный кабинет</title>
+</head>
+<body>
+    <div align="center">
+        <div style="margin-top: 1em; margin-bottom: 1em;"><font class="upmenu" style="font-size: 30px;">Вход в личный кабинет</font></div>
+        @if (ViewBag.EnteringInvalid)
+        {
+            <div><font class="upmenu" style="color: black;">Неверное имя пользователя и/или пароль!</font></div>
+        }
+        <form method="post" action="/Home/EnterProcess">
+            @if (ViewBag.EnteringInvalid)
+            {
+                <div style="margin-top: 1em; margin-bottom: 1em;"><input type="text" name="login" class="register" placeholder="Логин" style="background-color: rgba(255,80,83,1.00);" /></div>
+                <div style="margin-top: 1em; margin-bottom: 1em;"><input type="password" name="password" class="register" placeholder="Пароль" style="background-color: rgba(255,80,83,1.00);" /></div>
+            }
+            else
+            {
+                <div style="margin-top: 1em; margin-bottom: 1em;"><input type="text" name="login" class="register" placeholder="Логин" /></div>
+                <div style="margin-top: 1em; margin-bottom: 1em;"><input type="password" name="password" class="register" placeholder="Пароль" /></div>
+            }
+            <input type="hidden" name="asAdmin" value="@ViewBag.EnterAsAdmin.ToString()" />
+            <div style="margin-top: 2em; margin-bottom: 1em;"><input class="enter-btn" type="submit" value="ВОЙТИ"/></div>
+        </form>
+        @if (!ViewBag.EnterAsAdmin)
+        {
+            <div style="margin-top: 2em; margin-bottom: 1em;"><font class="upmenu">Ещё не зарегистрированы?&nbsp;</font><a href="/Home/Registration?passwordsAreSame=true" class="special" style="font-size: 20px;">Зарегистрироваться</a></div>
+        }
+        @if (ViewBag.EnteringInvalid)
+        {
+            <div style="margin-top: 2em; margin-bottom: 1em;"><font class="upmenu">Забыли пароль?&nbsp;</font><a href="#" class="special" style="font-size: 20px;">Восстановить пароль</a></div>
+        }
+    </div>
+</body>
+</html>

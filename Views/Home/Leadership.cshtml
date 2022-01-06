@@ -1,0 +1,67 @@
+﻿@{
+    if (ViewBag.Entered)
+        Layout = "~/Views/Shared/_Layout2.cshtml";
+    else
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.openedView = "leadership";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link type="text/css" rel="stylesheet" href="@Url.Content("~/css/site.css")" />
+    <title>Наше руководство</title>
+</head>
+<body>
+    <div class="flex-layout-lead">
+        <div class="flex-index-img">
+            <img src="@Url.Content("~/Images/Vazhniy.jpg")" alt="" />
+        </div>
+        <div class="flex-block2" align="center">
+            <p><font class="upmenu-yellow">Арсений Яковлевич Важный</font></p>
+            <p><font class="lead-black">Генеральный директор отеля</font></p>
+            <p><font class="lead-black">(</font><font class="lead-yellow">2014г. - наст. вр.</font><font class="lead-black">)</font></p>
+            <p><font class="lead-black">Телефон:&nbsp;</font><font class="lead-yellow">21-41-21</font></p>
+            <p><font class="lead-black">Email:&nbsp;</font><font class="lead-yellow">vazniy@mail.ru</font></p>
+        </div>
+    </div>
+    <div class="flex-layout-lead">
+        <div class="flex-index-img">
+            <img src="@Url.Content("~/Images/Bumazhniy.jpg")" alt="" />
+        </div>
+        <div class="flex-block2" align="center">
+            <p><font class="upmenu-yellow">Николай Евгеньевич Бумажный</font></p>
+            <p><font class="lead-black">Генеральный директор отеля</font></p>
+            <p><font class="lead-black">(</font><font class="lead-yellow">1999г. - 2014г.</font><font class="lead-black">)</font></p>
+            <p><font class="lead-black">Телефон:&nbsp;</font><font class="lead-yellow">номер не доступен</font></p>
+            <p><font class="lead-black">Email:&nbsp;</font><font class="lead-yellow">bumazniy@mail.ru</font></p>
+        </div>
+    </div>
+    <div class="flex-layout-lead">
+        <div class="flex-index-img">
+            <img src="@Url.Content("~/Images/Dobriy.jpg")" alt="" />
+        </div>
+        <div class="flex-block2" align="center">
+            <p><font class="upmenu-yellow">Олег Александрович Добрый</font></p>
+            <p><font class="lead-black">Главный Администратор отеля</font></p>
+            <p><font class="lead-black">(</font><font class="lead-yellow">2014г. - наст. вр.</font><font class="lead-black">)</font></p>
+            <p><font class="lead-black">Телефон:&nbsp;</font><font class="lead-yellow">25-41-21</font></p>
+            <p><font class="lead-black">Email:&nbsp;</font><font class="lead-yellow">dobriy@mail.ru</font></p>
+        </div>
+    </div>
+    <div class="flex-layout-lead">
+        <div class="flex-index-img">
+            <img src="@Url.Content("~/Images/Zlydnya.jpg")" alt="" />
+        </div>
+        <div class="flex-block2" align="center">
+            <p><font class="upmenu-yellow">Дарья Алексеевна Злыдня</font></p>
+            <p><font class="lead-black">Генеральный Секретарь отеля</font></p>
+            <p><font class="lead-black">(</font><font class="lead-yellow">2014г. - наст. вр.</font><font class="lead-black">)</font></p>
+            <p><font class="lead-black">Телефон:&nbsp;</font><font class="lead-yellow">26-41-21</font></p>
+            <p><font class="lead-black">Email:&nbsp;</font><font class="lead-yellow">zlidnya@mail.ru</font></p>
+        </div>
+    </div>
+</body>
+</html>

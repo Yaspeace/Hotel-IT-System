@@ -1,0 +1,51 @@
+﻿@model BookingMoreInfoModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link type="text/css" rel="stylesheet" href="@Url.Content("~/css/site.css")" />
+    <title>Бронирования|Постояльцы и сервисы</title>
+</head>
+<body>
+    <div style="margin: 1.5em 0 1.5em 0;">
+        <a class="enter-btn" href="/Home/BookingTable">&#8592;Назад</a>
+    </div>
+    <div><font class="upmenu">Постояльцы:</font></div>
+    <table class="inform">
+        <thead>
+            <tr>
+                <td>ФИО</td>
+                <td>Паспорт</td>
+                <td>Гражданство</td>
+            </tr>
+        </thead>
+        @foreach(var g in Model.Guests)
+        {
+            <tr>
+                <td>@Model.GetGuestFIO(g)</td>
+                <td>@g.passport</td>
+                <td>@Model.GetCitizen(g)</td>
+            </tr>
+        }
+    </table>
+    <div><font class="upmenu">Заказанные услуги:</font></div>
+    <table class="inform">
+        <thead>
+            <tr>
+                <td>Услуга</td>
+            </tr>
+        </thead>
+        @foreach(var serv in Model.Services)
+        {
+            <tr>
+                <td>@serv.name</td>
+            </tr>
+        }
+    </table>
+</body>
+</html>

@@ -1,0 +1,46 @@
+﻿@{
+    if (ViewBag.Entered)
+        Layout = "~/Views/Shared/_Layout2.cshtml";
+    else
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.openedView = "booking";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link type="text/css" rel="stylesheet" href="@Url.Content("~/css/site.css")" />
+    <title>Бронирование</title>
+</head>
+<body>
+    <!--Выбор подкатегории-->
+    <form method="post" action="/Home/Booking3">
+        <div id="second" class="booking-backgr" style="margin-bottom: 15px;padding-top:1em;padding-bottom:1em;">
+            <div style="margin-left:2em;">
+                <font class="lead-black">Подкатегория:&nbsp;</font>
+                <select id="subcatsel" class="booking-input" name="subcat">
+                    @foreach (var sc in ViewBag.Subcats)
+                    {
+                        <option value="@sc.id" onselect="change_price(@sc.price.ToString())">@sc.name.ToString()</option>
+                    }
+                </select>
+                <font id="pricing" class="lead-black">Цена: ? рублей/сутки</font><br>
+                <font class="lead-black">Осталось свободных номеров: ?</font><br>
+                <font class="lead-black">Максимальное количество взрослых: ?</font><br>
+                <font class="index-font1">Обратите внимание, что если количество заселяемых человек превышает максимально допустимое, вы можете оформить ещё одно бронирование, или связаться с техподдержкой отеля!</font>
+            </div>
+            <div style="margin-top: 2em;">
+                <input class="enter-btn" style="margin-left: 1em;margin-top: 2em;" value="Продолжить" type="submit"><a class="enter-btn-cancel" style="margin-left:1em;" href="">Вернуться</a>
+            </div>
+        </div>
+    </form>
+    <script>
+        function change_price(newPrice) {
+            let elem = document.getElementById('pricing');
+            elem.innerHTML = 'Цена: ' + toString(newPrice) + ' рублей/сутки';
+        };
+    </script>
+</body>
+</html>

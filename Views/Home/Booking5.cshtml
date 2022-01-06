@@ -1,0 +1,63 @@
+﻿@{
+    if (ViewBag.Entered)
+        Layout = "~/Views/Shared/_Layout2.cshtml";
+    else
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.openedView = "booking";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link type="text/css" rel="stylesheet" href="@Url.Content("~/css/site.css")" />
+    <title>Бронирование</title>
+</head>
+<body>
+    <form method="post" action="/Home/Payment">
+        @foreach(int i in Enumerable.Range(1, ViewBag.adults))
+        {
+        <div class="booking-backgr">
+            <table>
+                <tr>
+                    <td><font class="lead-black">Фамилия:</font></td>
+                    <td><input name="surname" type="text" /></td>
+                    <td><a class="enter-btn" style="padding: 0 0 0 0;border-radius: 0;" href="#">Это я</a></td>
+                </tr>
+                <tr>
+                    <td><font class="lead-black">Имя:</font></td>
+                    <td><input name="name" type="text" /></td>
+                </tr>
+                <tr>
+                    <td><font class="lead-black">Отчество (если есть):</font></td>
+                    <td><input name="patronymic" type="text" /></td>
+                </tr>
+                <tr>
+                    <td><font class="lead-black">Дата рождения:</font></td>
+                    <td><input name="birthday" type="date" value="2021-12-16" /></td>
+                </tr>
+                <tr>
+                    <td><font class="lead-black">Паспорт/Свидетельство о рождении:</font></td>
+                    <td><input name="passport" type="text" placeholder="?? ?? ??????" /></td>
+                </tr>
+                <tr>
+                    <td><font class="lead-black">Гражданство:</font></td>
+                    <td>
+                        <select name="citizenship">
+                            @foreach (Country c in ViewBag.countries)
+                            {
+                                <option value="@c.country_code">@c.country_name</option>
+                            }
+                        </select>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div style="margin-top:1em;">
+            <input type="submit" class="enter-btn" value="Подтвердить и перейти к оплате" />
+        </div>
+        }
+    </form>
+</body>
+</html>

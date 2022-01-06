@@ -1,0 +1,97 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link type="text/css" rel="stylesheet" href="@Url.Content("~/css/site.css")" />
+    <title>Личный кабинет|Анкета</title>
+</head>
+<body>
+    <div class="flex-layout-betw">
+        <div class="booking-menu">
+            <a href="/Home/BookingHist?id=@ViewBag.cur_cl.client_id.ToString()">
+                <img src="@Url.Content("~/Images/Booking hist.png")" alt="" /><br />
+                <font class="upmenu" style="font-size: 14px;">История бронирований</font>
+            </a>
+        </div>
+        <div class="booking-menu">
+            <a href="#">
+                <img src="@Url.Content("~/Images/anketa.png")" alt="" /><br />
+                <font class="upmenu" style="font-size: 14px;">Персональные данные</font>
+            </a>
+        </div>
+        <div class="booking-menu">
+            <a href="/Home/UserBookings?id=@ViewBag.cur_cl.client_id.ToString()">
+                <img src="@Url.Content("~/Images/Last booking.png")" alt="" /><br />
+                <font class="upmenu" style="font-size: 14px;">Последние брони</font>
+            </a>
+        </div>
+        <div class="booking-menu" style="width: 60%;vertical-align: middle;">
+            <div class="welcome-bar" style="height: 50%;">Добро пожаловать,<br /> @ViewBag.cur_user_name @ViewBag.cur_user_patronym!</div>
+        </div>
+        <div class="booking-menu">
+            <a href="/Home/Quit">
+                <img src="@Url.Content("~/Images/Quit.png")" alt="" /><br />
+                <font class="upmenu" style="font-size: 14px;">Выход</font>
+            </a>
+        </div>
+    </div>
+    <form method="post" action="/Home/UserLK"> 
+        <div style="margin-top: 4em;">
+            <table>
+                <tr>
+                    <td><font class="upmenu">Фамилия:</font></td>
+                    <td><input type="text" value="@ViewBag.cur_cl.client_surname" name="surname" class="anketa-data" placeholder="введите здесь" disabled /></td>
+                    <td id="changedata" style="visibility: visible;">&nbsp;&nbsp;&nbsp;&nbsp;<a href="#btns" onclick="ChangeVisibility('btns'); ChangeVisibility('changedata'); EnableInputs()"><img src="@Url.Content("~/Images/redakt.png")" style="width: 20px; height: 20px;" alt=""><font class="lead-black">Изменить данные...</font></a></td>
+                </tr>
+                <tr>
+                    <td><font class="upmenu">Имя:</font></td>
+                    <td><input type="text" value="@ViewBag.cur_cl.client_name" name="name" class="anketa-data" placeholder="введите здесь" disabled/></td>
+                </tr>
+                <tr>
+                    <td><font class="upmenu">Отчество:</font></td>
+                    <td><input type="text" value="@ViewBag.cur_cl.client_patronym" name="patronym" class="anketa-data" placeholder="введите здесь" disabled/></td>
+                </tr>
+                <tr>
+                    <td><font class="upmenu">Серия/номер паспорта:</font></td>
+                    <td><input type="text" value="@ViewBag.cur_cl.passport_number" name="passport" class="anketa-data" placeholder="__ __ ________" disabled/></td>
+                </tr>
+                <tr>
+                    <td><font class="upmenu">Телефон:</font></td>
+                    <td><input type="text" value="@ViewBag.cur_cl.phone" name="phone" class="anketa-data" placeholder="+7(???)???-??-??" disabled/></td>
+                </tr>
+                <tr>
+                    <td><font class="upmenu">E-mail:</font></td>
+                    <td><input type="text" value="@ViewBag.cur_cl.email" name="email" class="anketa-data" placeholder="example@mail.ru" disabled/></td>
+                </tr>
+            </table>
+        </div>
+        <div id="btns" style="margin-top: 2em; margin-bottom: 2em;visibility:hidden;">
+            <input type="reset" value="Отменить" class="enter-btn" style="background-color: rgb(252, 170, 127);" onclick="ChangeVisibility('btns'); ChangeVisibility('changedata'); EnableInputs()"/>&nbsp;&nbsp;&nbsp;<input type="submit" value="Сохранить" class="enter-btn" onsubmit="ChangeVisibility('btns'); ChangeVisibility('changedata');EnableInputs()"/>
+        </div>
+    </form>
+
+    <script>
+        function ChangeVisibility(id) {
+            let elemtohide = document.getElementById(id);
+            if (elemtohide.style.visibility == "visible")
+                elemtohide.style.visibility = "hidden";
+            else
+                elemtohide.style.visibility = "visible";
+        }
+        function EnableInputs() {
+            let inps = document.getElementsByClassName('anketa-data');
+            for (let inp of inps) {
+                if (inp.disabled == true)
+                    inp.disabled = false;
+                else
+                    inp.disabled = true;
+            }
+        }
+    </script>
+</body>
+</html>

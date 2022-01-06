@@ -1,0 +1,136 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/css/site.css")" rel="stylesheet" />
+</head>
+<body>
+    <header id="head1">
+        <div class="flex-layout">
+            <div class="flex-block">
+                <font class="upmenu-main">Свяжитесь с нами:</font><br><font class="upmenu">8(800)5553535<br>22-33-22<br>lordofthewinds@mail.ru</font>
+            </div>
+            <div class="flex-block" align="right">
+                <font class="upmenu-main">Наш адрес:</font><br><font class="upmenu">Россия, респ. Крым<br>г. Севастополь<br>ул. Ангарская, 18</font>
+            </div>
+            <div class="flex-block-centered">
+                <a href="/Home/Index"><img src="@Url.Content("~/Images/emblem.png")" alt="" /></a>
+            </div>
+            <div class="menu-emblem">
+                <a href="/Home/Chat">
+                    <img src="@Url.Content("~/Images/emblem support.png")" alt="" />
+                    <div align="center"><font class="upmenu">Помощь</font></div>
+                </a>
+            </div>
+            <div class="flex-block" align="center">
+                <a href="#" class="down" onclick="openmenu()"><font class="upmenu-main" style="font-size: 15px;">Добро пожаловать,<br />@ViewBag.cur_user_name @ViewBag.cur_user_patronym!</font></a>
+                <ul class="falling" id="menuha">
+                    @if (ViewBag.EnteredAsAdmin)
+                    {
+                        <li><a href="/Home/AdminLK">Личный кабинет</a></li>
+                    }
+                    else
+                    {
+                        <li><a href="/Home/UserLK">Личный кабинет</a></li>
+                    }
+                    <li><a href="/Home/Quit">Выйти</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <ul style="margin-left: 0; float: left; width: 20%;">
+        @if (ViewBag.openedView == "index")
+        {
+            <li class="special"><a class="left-menu-a" href="/Home/Index"><font class="upmenu" style="color: black;">ГЛАВНАЯ</font></a></li>
+        }
+        else
+        {
+            <li class="special"><a class="left-menu-a" href="/Home/Index"><font class="upmenu">ГЛАВНАЯ</font></a></li>
+        }
+        @if (ViewBag.openedView == "rooms")
+        {
+            <li class="special"><a class="left-menu-a" href="/Home/Rooms"><font class="upmenu" style="color: black;">НОМЕРА</font></a></li>
+        }
+        else
+        {
+            <li class="special"><a class="left-menu-a" href="/Home/Rooms"><font class="upmenu">НОМЕРА</font></a></li>
+        }
+        @if (ViewBag.openedView == "services")
+        {
+            <li class="special"><a class="left-menu-a" href="/Home/Services"><font class="upmenu" style="color: black;">УСЛУГИ</font></a></li>
+        }
+        else
+        {
+            <li class="special"><a class="left-menu-a" href="/Home/Services"><font class="upmenu">УСЛУГИ</font></a></li>
+        }
+        @if (ViewBag.openedView == "leadership")
+        {
+            <li class="special"><a class="left-menu-a" href="/Home/Leadership"><font class="upmenu" style="color: black;">РУКОВОДСТВО</font></a></li>
+        }
+        else
+        {
+            <li class="special"><a class="left-menu-a" href="/Home/Leadership"><font class="upmenu">РУКОВОДСТВО</font></a></li>
+        }
+        @if (ViewBag.openedView == "reviews")
+        {
+            <li class="special"><a class="left-menu-a" href="#"><font class="upmenu" style="color: black;">ОТЗЫВЫ</font></a></li>
+        }
+        else
+        {
+            <li class="special"><a class="left-menu-a" href="#"><font class="upmenu">ОТЗЫВЫ</font></a></li>
+        }
+        @if (ViewBag.openedView == "booking")
+        {
+            <li class="special"><a class="left-menu-a" href="/Home/Booking"><font class="upmenu" style="color: black;">ЗАБРОНИРОВАТЬ</font></a></li>
+        }
+        else
+        {
+            <li class="special"><a class="left-menu-a" href="/Home/Booking"><font class="upmenu">ЗАБРОНИРОВАТЬ</font></a></li>
+        }
+    </ul>
+    <div style="display: flow-root; width: 80%;">
+        @RenderBody()
+    </div>
+    <footer>
+        <table width="100%">
+            <tr>
+                <td width="25%"><font class="upmenu" style="font-size: 15px;">8(800)555-35-35</font></td>
+                <td width="25%"><font class="upmenu" style="font-size: 15px;">lordofthewinds@mail.ru</font></td>
+                <td width="25%"><a href="/Home/Chat" class="register-a"><font class="upmenu" style="font-size: 15px;">Техподдержка</font></a></td>
+                <td width="25%"><a href="/Home/Npas" class="register-a"><font class="upmenu" style="font-size: 15px;">Ваши права и наши обязанности</font></a></td>
+            </tr>
+            <tr>
+                <td width="25%"><font class="upmenu" style="font-size: 15px;">22-33-22</font></td>
+                <td width="25%"><font class="upmenu" style="font-size: 15px;">Россия, респ. Крым, г. Севастополь,<br>ул. Ангарская, 18</font></td>
+                <td width="25%"><a href="/Home/StaffForUser" class="register-a"><font class="upmenu" style="font-size: 15px;">Сотрудники</font></a></td>
+                <td width="25%"><font class="upmenu" style="font-size: 15px;">&copy; 1999-2021 Lord Of The Winds Hotel, Sevastopol</font></td>
+            </tr>
+        </table>
+    </footer>
+    <script>
+        let opened = false;
+        let menuElem = document.getElementById('menuha');
+
+        function openmenu() {
+            if (!opened) {
+                menuElem.style.visibility = "visible";
+                menuElem.style.opacity = "1";
+                opened = true;
+            }
+            else {
+                menuElem.style.visibility = "";
+                menuElem.style.opacity = "";
+                opened = false;
+            }
+        };
+    </script>
+</body>
+</html>

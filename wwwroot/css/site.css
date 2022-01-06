@@ -1,0 +1,545 @@
+﻿@charset "utf-8";
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: rgba(177,63,154,1.00);
+}
+
+footer {
+    height: 75px;
+    background-color: rgb(199,58,103);
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px black;
+}
+
+a {
+    text-decoration: none;
+}
+
+#head1 {
+    /*border: 1px solid black;*/
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+li.special {
+    margin-top: 1px;
+    margin-right: 5em;
+    height: 4em;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(188,111,206,1.00);
+    border-radius: 5px;
+}
+
+    li.special:hover {
+        background-color: rgba(219,178,228,1.00);
+    }
+
+table.full-width {
+    width: 100%;
+}
+
+td.centered {
+    text-align: center;
+}
+
+font.upmenu-main {
+    text-decoration: underline;
+    color: rgba(255,255,255,1.00);
+    font-weight: bold;
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 24px;
+}
+
+font.upmenu {
+    color: rgba(255,255,255,1.00);
+    font-weight: bold;
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+}
+
+.upmenu-yellow {
+    color: rgb(255,255,0);
+    font-weight: bold;
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+}
+
+.lead-yellow {
+    color: rgb(255,255,0);
+    font-weight: normal;
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    font-style: italic;
+}
+
+.lead-black {
+    color: rgb(0,0,0);
+    font-weight: normal;
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+}
+
+font.index-font1 {
+    color: rgba(104,31,77,1.00);
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    font-style: italic;
+}
+
+.nav-table {
+    display: block;
+    text-align: center;
+    table-layout: fixed;
+    color: rgba(255,255,255,1.00);
+    font-weight: bold;
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: x-large;
+}
+
+nav.left-handed {
+    left: 0px;
+}
+
+a.special {
+    text-decoration: none;
+    border-bottom: 1px dashed rgba(14,12,120,1.00);
+    color: rgba(14,12,120,1.00);
+}
+
+div.flex-layout {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+div.flex-layout-betw {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+div.flex-block {
+    display: block;
+    height: 200px;
+    line-height: 3em;
+    /*flex-basis: 270px;*/
+}
+
+.flex-block-centered {
+    display: block;
+    height: 200px;
+    flex-basis: 270px;
+    align-self: center;
+}
+
+.menu-emblem {
+    display: block;
+    height: 100px;
+    flex-basis: 100px;
+}
+
+.register {
+    text-align: right;
+    padding-right: 0em;
+}
+
+.register-a {
+    color: rgba(255,255,255,1.00);
+    font-weight: bold;
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: small;
+    text-decoration: underline;
+}
+
+    .register-a:hover {
+        color: rgba(5,0,143,1.00);
+        padding-right: 0em;
+    }
+
+div.flex-layout-vertical {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+a.btn {
+    text-decoration: none;
+    padding: 0.5em 1em 0.5em 1em;
+    background-color: rgba(227,139,230,1.00);
+    border-radius: 5px;
+}
+
+a.left-menu-a {
+    display: block;
+    padding-top: 1em;
+    width: 100%;
+    height: 3em;
+}
+
+div.flex-layout2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+div.flex-layout-lead {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+div.flex-block2 {
+    display: block;
+    flex-basis: 80%;
+}
+
+div.flex-index-img {
+    display: block;
+    height: 250px;
+    flex-basis: 250px;
+}
+
+div.index-btn {
+    text-align: center;
+}
+
+.index-btn a {
+    padding: 2em 6em 2em 6em;
+    background-color: rgb(199,58,103);
+    border-radius: 10px;
+    box-shadow: 5px 3px 15px black;
+}
+
+.index-text {
+    padding-top: 2em;
+    background-color: rgb(172,102,187);
+    border-radius: 10px;
+}
+
+input.register {
+    background-color: rgba(255,200,249,1.00);
+    border-style: 1px solid black;
+    border-radius: 5px;
+    color: rgba(104,31,77,1.00);
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 40px;
+    text-align: center;
+}
+
+.enter-btn {
+    position: relative;
+    background-color: rebeccapurple;
+    color: rgba(255,255,255,1.00);
+    font-weight: bold;
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    padding: 0.5em 2em 0.5em 2em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    border-style: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px black;
+}
+
+    a.enter-btn:hover {
+        background-color: rgba(203,135,255,1.00);
+    }
+
+    a.enter-btn:active {
+        top: .1em;
+        left: .1em;
+        box-shadow: none;
+    }
+
+.enter-btn-cancel {
+    position: relative;
+    background-color: rgb(252, 170, 127);
+    color: rgba(255,255,255,1.00);
+    font-weight: bold;
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    padding: 0.5em 2em 0.5em 2em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    border-style: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px black;
+}
+
+a.enter-btn-cancel:hover {
+    background-color: rgb(255,220,135);
+}
+
+a.enter-btn-cancel:active {
+    top: .1em;
+    left: .1em;
+    box-shadow: none;
+}
+
+div.flowed-table {
+    overflow: auto;
+    height: 350px;
+}
+
+div.booking-backgr {
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 2em;
+}
+
+font.booking-info-main {
+    color: black;
+    font-weight: bold;
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 24px;
+}
+
+font.booking-info {
+    color: black;
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 22px;
+}
+
+div.booking-menu {
+    display: block;
+    text-align: center;
+    height: 6em;
+}
+
+.booking-menu img {
+    width: 100px;
+    height: 100px;
+}
+
+.welcome-bar {
+    color: rgba(104,31,77,1.00);
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    font-style: italic;
+    background-color: rgb(253, 209, 177);
+    border: 5px solid rgb(104,31,77);
+    border-radius: 15px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.anketa-data {
+    background-color: rgb(253, 209, 177);
+    border-style: 1px solid black;
+    border-radius: 5px;
+    color: rgba(104,31,77,1.00);
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    text-align: center;
+}
+
+li.admin-menu {
+    margin-top: 2px;
+    margin-right: 0;
+    height: 3em;
+    width: 50%;
+    text-align: center;
+    background-color: rgb(241, 215, 236);
+    border-radius: 5px;
+}
+
+a.admin-menu {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: rgba(104,31,77,1.00);
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+li.admin-menu:hover {
+    background-color: rgb(251, 211, 136);
+}
+
+li.admin-menu:active {
+    background-color: white;
+}
+
+table.inform {
+    border-spacing: 0;
+    width: 100%;
+    border-radius: 5px;
+    border: solid;
+    background-color: white;
+}
+
+    table.inform thead tr {
+        border-bottom: solid;
+        background-color: rgba(203,135,255,1.00);
+    }
+
+    table.inform tr {
+        border-bottom: 1px black;
+    }
+
+    table.inform td {
+        color: rgb(0,0,0);
+        font-weight: normal;
+        font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 20px;
+        text-align: center;
+        border-bottom: 1px solid black;
+        border-right: 1px solid black;
+    }
+
+    table.inform img {
+        width: 20px;
+        height: 20px;
+    }
+
+table.admin-info {
+    border-spacing: 0;
+    width: 50%;
+    border-radius: 5px;
+    border: solid;
+    background-color: white;
+}
+
+.mySlides1, .mySlides2, .mySlides3, .mySlides4, .mySlides5 {
+    display: none
+}
+
+    .mySlides1 img, .mySlides2 img, .mySlides3 img, .mySlides4 img, .mySlides5 img {
+        border-radius: 10px;
+    }
+
+.slideshow-container {
+    max-width: 711px;
+    position: relative;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+    .slideshow-container img {
+        vertical-align: middle;
+    }
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+    /* On hover, add a grey background color */
+    .prev:hover, .next:hover {
+        background-color: #f1f1f1;
+        color: black;
+    }
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+div.usluga font {
+    vertical-align: middle;
+}
+
+div.usluga img {
+    width: 100px;
+    height: 100px;
+    vertical-align: middle;
+}
+
+ul.falling {
+    position: absolute;
+    border-radius: 10px;
+    background-color: rgba(188,111,206,1.00);
+    border: 2px solid #003559;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.2s ease-in-out;
+}
+
+    ul.falling li {
+        text-align: center;
+        border-bottom: 1px solid black;
+    }
+
+        ul.falling li a {
+            color: rgba(255,255,255,1.00);
+            font-weight: bold;
+            font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 15px;
+            display: block;
+            width: 100%;
+            height: 3em;
+        }
+
+        ul.falling li:first-child {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        ul.falling li:last-child {
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        ul.falling li:hover {
+            background-color: rgba(219,178,228,1.00);
+        }
+
+
+.hidden {
+    visibility: hidden;
+}

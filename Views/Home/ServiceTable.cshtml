@@ -1,0 +1,43 @@
+﻿@model ServiceTableModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link type="text/css" rel="stylesheet" href="@Url.Content("~/css/site.css")" />
+    <title>Администратор|Таблица броней</title>
+</head>
+<body>
+    <div>
+        <a class="enter-btn" href="/Home/AdminLK">&#8592;Назад</a>
+    </div>
+    <div align="center">
+        <font class="lead-black">Информация об услугах:</font>
+    </div>
+    <div class="flowed-table" style="height: 500px;">
+        <table class="inform">
+            <thead>
+                <tr>
+                    <td>Название услуги</td>
+                    <td>Цена(в сутки)</td>
+                    <td>Ответственное лицо</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var s in Model.Services)
+                {
+                    <tr>
+                        <td>@s.name</td>
+                        <td>@(s.price == null ? "-" : s.price.ToString())</td>
+                        <td>@Model.GetResponsible(s)</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

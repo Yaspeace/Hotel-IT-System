@@ -1,0 +1,52 @@
+﻿@{
+    if (ViewBag.Entered)
+        Layout = "~/Views/Shared/_Layout2.cshtml";
+    else
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.openedView = "booking";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link type="text/css" rel="stylesheet" href="@Url.Content("~/css/site.css")" />
+    <title>Бронирование</title>
+</head>
+<body>
+    <!--Количество человеков и цифорка номера-->
+    <form method="post" action="/Home/Booking4">
+        <div id="third" class="booking-backgr" style="margin-bottom: 15px;padding-top:1em;padding-bottom:1em;">
+            <div style="margin-left: 2em;">
+                <font class="lead-black">Количество взрослых:&nbsp;</font>
+                <select class="booking-input" name="adults">
+                    @for (int i = 1; i <= ViewBag.AdNum; i++)
+                    {
+                        <option value="@i">@i</option>
+                    }
+                </select>
+                <font class="lead-black">&nbsp;&nbsp;Количество детей:&nbsp;</font>
+                <select class="booking-input" name="childs">
+                    @for (int i = 0; i <= 6; i++)
+                    {
+                        <option value="@i">@i</option>
+                    }
+                </select>
+                <div style="margin-top:1em;">
+                    <font class="lead-black">Номер:&nbsp;</font>
+                    <select class="booking-input" name="roomNum">
+                        @foreach (Room room in ViewBag.EnabledRooms)
+                        {
+                            <option value="@room.room_number">@room.room_number</option>
+                        }
+                    </select>
+                </div>
+            </div>
+            <div style="margin-top: 2em;">
+                <input class="enter-btn" style="margin-left: 1em;margin-top: 2em;" value="Продолжить" type="submit" /><!--<a class="enter-btn-cancel" style="margin-left:1em;" href="">Вернуться</a>-->
+            </div>
+        </div>
+    </form>
+</body>
+</html>

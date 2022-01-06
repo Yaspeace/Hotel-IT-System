@@ -1,0 +1,265 @@
+﻿@{
+    if (ViewBag.Entered)
+        Layout = "~/Views/Shared/_Layout2.cshtml";
+    else
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.openedView = "rooms";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link type="text/css" rel="stylesheet" href="@Url.Content("~/css/site.css")" />
+    <title>Номера</title>
+</head>
+
+<body>
+    <div align="center"><font class="index-font1">Lord Of The Winds предлагает вашему вниманию следующие номера и категории номеров:</font></div>
+    <div align="center"><font class="lead-black" style="font-size: 40px;">Категории:</font></div>
+    <!--Список категорий-->
+    <div align="center" id="categories">
+        <ul style="width: 100%;">
+            <li><a class="special" style="font-size: 30px;" href="#presLux">Президентский люкс</a><font class="lead-black" style="font-size: 30px;">&nbsp;(25 номеров в категории)</font></li>
+            <li><a class="special" style="font-size: 30px;" href="#lux">Люкс</a><font class="lead-black" style="font-size: 30px;">&nbsp;(50 номеров в категории)</font></li>
+            <li><a class="special" style="font-size: 30px;" href="#komplus">Комфорт плюс</a><font class="lead-black" style="font-size: 30px;">&nbsp;(100 номеров в категории)</font></li>
+            <li><a class="special" style="font-size: 30px;" href="#komfort">Комфорт</a><font class="lead-black" style="font-size: 30px;">&nbsp;(100 номеров в категории)</font></li>
+            <li><a class="special" style="font-size: 30px;" href="#ekonom">Эконом</a><font class="lead-black" style="font-size: 30px;">&nbsp;(100 номеров в категории)</font></li>
+        </ul>
+    </div>
+    <div align="center"><font class="lead-black" style="font-size: 40px;">Номера:</font></div>
+    <!--Президентский люкс-->
+    <div align="center"><a class="special" style="font-size: 40px;" id="presLux" href="#categories">Президентский люкс</a></div>
+    <div align="center"><font class="lead-black" style="font-size: 30px;">Данная категория включает номера по следующим подкатегориям:</font></div>
+    <div align="center"><font class="lead-yellow" style="text-decoration: underline;">Пятикомнатные</font><font class="lead-yellow">(10 номеров в категории):</font></div>
+    <div align="center"><font class="lead-black">Номер состоит из двух спален, комнаты отдыха, двух санузлов (доступны ванная, душ, джакузи), также доступна лождия. <br>Рассчитан на 4 взрослых или 2 взрослых с детьми. Суточный тариф составляет </font><font class="lead-yellow">10 000 рублей</font></div>
+    <div align="center"><font class="lead-black">Для бронирования выберите один из номеров аппартаментов:</font><font class="lead-yellow">№501-№510</font></div>
+
+
+    <div align="center"><font class="lead-yellow" style="text-decoration: underline;margin-top: 20px;">Четырёхкомнатные</font><font class="lead-yellow">(10 номеров в категории):</font></div>
+    <div align="center"><font class="lead-black">Номер состоит из двух спален, комнаты отдыха, санузел раздельный (доступны душ и джакузи), также доступна лоджия. <br>Рассчитан на 4 взрослых или 2 взрослых с детьми. Суточный тариф составляет </font><font class="lead-yellow">9 500 рублей</font></div>
+    <div align="center"><font class="lead-black">Для бронирования выберите один из номеров аппартаментов:</font><font class="lead-yellow">№511-№520</font></div>
+
+    <div align="center"><font class="lead-yellow" style="text-decoration: underline;margin-top: 20px;">Трёхкомнатные</font><font class="lead-yellow">(5 номеров в категории):</font></div>
+    <div align="center"><font class="lead-black">Номер состоит из одной спальни, комнаты отдыха, санузел раздельный (доступны душ и джакузи), также доступна лоджия. <br>Рассчитан на 2 взрослых или 2 взрослых с детьми. Суточный тариф составляет </font><font class="lead-yellow">8 000 рублей</font></div>
+    <div align="center"><font class="lead-black">Для бронирования выберите один из номеров аппартаментов:</font><font class="lead-yellow">№521-№525</font></div>
+
+    <!--Слайдшоу, Изображения 711*400 px -->
+    <div class="slideshow-container">
+        <div class="mySlides1 fade">
+            <img src="@Url.Content("~/Images/Nomera/img_presLux_1.jpg")" alt="" />
+        </div>
+
+        <div class="mySlides1 fade">
+            <img src="@Url.Content("~/Images/Nomera/img_presLux_2.jpg")" alt="" />
+        </div>
+
+        <div class="mySlides1 fade">
+            <img src="@Url.Content("~/Images/Nomera/img_presLux_3.jpg")" alt="" />
+        </div>
+
+        <div class="mySlides1 fade">
+            <img src="@Url.Content("~/Images/Nomera/img_presLux_4.jpg")" alt="" />
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1, 0)">❮</a>
+        <a class="next" onclick="plusSlides(1, 0)">❯</a>
+    </div>
+
+    <!--Постскриптум пред люкса-->
+    <div align="center"><font class="lead-black" style="font-size: 25px; font-style:italic;">Номера в категории «Президентский люкс» – наше самое комфортабельное предложение. Именно здесь Вы сможете погрузиться в уют и роскошь и провести незабываемый отпуск, деловую поездку или значимый праздник. Президентский люкс – Ваш лучший выбор в Lord of the Winds!</font></div>
+    <div><font class="lead-black" style="font-style:italic;">Вам будут доступны такие VIP-услуги, как:</font></div>
+    <ul style="list-style-type: disc; padding-left: 10px;">
+        <li><font class="lead-black" style="font-style:italic;">Минибар в номере</font></li>
+        <li><font class="lead-black" style="font-style:italic;">Дополнительная уборка (ежедневно)</font></li>
+        <li><font class="lead-black" style="font-style:italic;">Услуги няни/гувернантки</font></li>
+        <li><font class="lead-black" style="font-style:italic;">Детская кроватка/люлька-качалка в номер</font></li>
+        <li><font class="lead-black" style="font-style:italic;">Дог-ситтер и услуги для ваших питомцев</font></li>
+    </ul>
+
+
+    <!--Люкс-->
+    <div align="center"><a class="special" style="font-size: 40px;" id="lux" href="#categories">Люкс</a></div>
+
+    <div align="center"><font class="lead-black" style="font-size: 30px;">Данная категория включает номера по следующим подкатегориям:</font></div>
+    <div align="center"><font class="lead-yellow" style="text-decoration: underline;">Трёхмнатные</font><font class="lead-yellow">(25 номеров в категории):</font></div>
+    <div align="center"><font class="lead-black">Номер состоит из двух спален, санузел совмещен (доступны душ и джакузи), также доступна лоджия. <br>Рассчитан на 4 взрослых или 2 взрослых с детьми. Суточный тариф составляет </font><font class="lead-yellow">7 000 рублей</font></div>
+    <div align="center"><font class="lead-black">Для бронирования выберите один из номеров аппартаментов:</font><font class="lead-yellow">№401-№425</font></div>
+
+    <div align="center"><font class="lead-yellow" style="text-decoration: underline;margin-top: 20px;">Двухкомнатные</font><font class="lead-yellow">(25 номеров в категории):</font></div>
+    <div align="center"><font class="lead-black">Номер состоит из спальни, санузел раздельный (доступны душ и джакузи), также доступна лоджия. <br>Рассчитан на 2 взрослых или 2 взрослых с детьми. Суточный тариф составляет </font><font class="lead-yellow">6 500 рублей</font></div>
+    <div align="center"><font class="lead-black">Для бронирования выберите один из номеров аппартаментов:</font><font class="lead-yellow">№426-№450</font></div>
+
+    <!--Слайдшоу Люксов-->
+    <div class="slideshow-container">
+        <div class="mySlides2 fade">
+            <img src="@Url.Content("~/Images/Nomera/img_lux_1.jpg")" alt="" />
+        </div>
+
+        <div class="mySlides2 fade">
+            <img src="@Url.Content("~/Images/Nomera/img_lux_2.jpg")" alt="" />
+        </div>
+
+        <div class="mySlides2 fade">
+            <img src="@Url.Content("~/Images/Nomera/img_lux_3.jpg")" alt="" />
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1, 1)">❮</a>
+        <a class="next" onclick="plusSlides(1, 1)">❯</a>
+    </div>
+
+    <!--Постскриптум люкса-->
+    <div align="center"><font class="lead-black" style="font-size: 25px; font-style:italic;">Номера в категории «Люкс» также являются одним из наших самых комфортабельных предложений. Здесь Вы тоже сможете погрузиться в уют и роскошь и провести незабываемый отпуск, деловую поездку или значимый праздник.</font></div>
+    <div><font class="lead-black" style="font-style:italic;">Вам будут доступны такие VIP-услуги, как:</font></div>
+    <ul style="list-style-type: disc; padding-left: 10px;">
+        <li><font class="lead-black" style="font-style:italic;">Минибар в номере</font></li>
+        <li><font class="lead-black" style="font-style:italic;">Дополнительная уборка (ежедневно)</font></li>
+        <li><font class="lead-black" style="font-style:italic;">Услуги няни/гувернантки</font></li>
+        <li><font class="lead-black" style="font-style:italic;">Детская кроватка/люлька-качалка в номер</font></li>
+        <li><font class="lead-black" style="font-style:italic;">Дог-ситтер и услуги для ваших питомцев</font></li>
+    </ul>
+
+    <!--Комфорт плюс-->
+    <div align="center"><a class="special" style="font-size: 40px;" id="komplus" href="#categories">Комфорт плюс</a></div>
+
+    <div align="center"><font class="lead-black" style="font-size: 30px;">Данная категория включает номера по следующим подкатегориям:</font></div>
+    <div align="center"><font class="lead-yellow" style="text-decoration: underline;">Трёхмнатные</font><font class="lead-yellow">(50 номеров в категории):</font></div>
+    <div align="center"><font class="lead-black">Номер состоит из двух спален, санузел совмещен (доступны душ и джакузи), также доступна лоджия. <br>Рассчитан на 4 взрослых или 2 взрослых с детьми. Суточный тариф составляет </font><font class="lead-yellow">5 000 рублей</font></div>
+    <div align="center"><font class="lead-black">Для бронирования выберите один из номеров аппартаментов:</font><font class="lead-yellow">№300-№349</font></div>
+
+    <div align="center"><font class="lead-yellow" style="text-decoration: underline;margin-top: 20px;">Двухкомнатные</font><font class="lead-yellow">(50 номеров в категории):</font></div>
+    <div align="center"><font class="lead-black">Номер состоит из двух спален, санузел совмещен (доступны душ и джакузи), также доступна лоджия. <br>Рассчитан на 2 взрослых или 2 взрослых с детьми. Суточный тариф составляет </font><font class="lead-yellow">4 500 рублей</font></div>
+    <div align="center"><font class="lead-black">Для бронирования выберите один из номеров аппартаментов:</font><font class="lead-yellow">№350-№400</font></div>
+
+    <!--Слайдшоу комплюсов-->
+    <div class="slideshow-container">
+        <div class="mySlides3 fade">
+            <img src="@Url.Content("~/Images/Nomera/img_komPlus_1.jpg")" alt="" />
+        </div>
+
+        <div class="mySlides3 fade">
+            <img src="@Url.Content("~/Images/Nomera/img_komPlus_2.jpeg")" alt="" />
+        </div>
+
+        <div class="mySlides3 fade">
+            <img src="@Url.Content("~/Images/Nomera/img_komPlus_3.jpg")" alt="" />
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1, 2)">❮</a>
+        <a class="next" onclick="plusSlides(1, 2)">❯</a>
+    </div>
+
+    <!--Постскриптум комплюса-->
+    <div align="center"><font class="lead-black" style="font-size: 25px; font-style:italic;">Номера в категории «Комфорт плюс» - золотая середина для ценителей простоты и комфорта. Здесь Вы тоже сможете погрузиться в уют и провести незабываемый отпуск, деловую поездку или праздник.</font></div>
+    <div><font class="lead-black" style="font-style:italic;">Вам будут доступны такие услуги, как:</font></div>
+    <ul style="list-style-type: disc; padding-left: 10px;">
+        <li><font class="lead-black" style="font-style:italic;">Дополнительная уборка (по запросу)</font></li>
+        <li><font class="lead-black" style="font-style:italic;">Услуги няни/гувернантки</font></li>
+        <li><font class="lead-black" style="font-style:italic;">Детская кроватка/люлька-качалка в номер</font></li>
+        <li><font class="lead-black" style="font-style:italic;">Дог-ситтер и услуги для ваших питомцев</font></li>
+    </ul>
+
+    <!--Комфорт-->
+    <div align="center"><a class="special" style="font-size: 40px;" id="komfort" href="#categories">Комфорт</a></div>
+
+    <div align="center"><font class="lead-black" style="font-size: 30px;">Данная категория включает номера по следующим подкатегориям:</font></div>
+    <div align="center"><font class="lead-yellow" style="text-decoration: underline;">Четырёхместные</font><font class="lead-yellow">(50 номеров в категории):</font></div>
+    <div align="center"><font class="lead-black">Номер состоит из спальни, санузел совмещен, также доступна лоджия. <br>Рассчитан на 4 человек (2 двуспальные кровати). Суточный тариф составляет </font><font class="lead-yellow">3 000 рублей</font></div>
+    <div align="center"><font class="lead-black">Для бронирования выберите один из номеров аппартаментов:</font><font class="lead-yellow">№200-№249</font></div>
+
+    <div align="center"><font class="lead-yellow" style="text-decoration: underline;">Трёхместные</font><font class="lead-yellow">(25 номеров в категории):</font></div>
+    <div align="center"><font class="lead-black">Номер состоит из спальни, санузел совмещен, также доступна лоджия. <br>Рассчитан на 3 человек (двуспальная и односпальная кровать). Суточный тариф составляет </font><font class="lead-yellow">2 500 рублей</font></div>
+    <div align="center"><font class="lead-black">Для бронирования выберите один из номеров аппартаментов:</font><font class="lead-yellow">№250-№274</font></div>
+
+    <div align="center"><font class="lead-yellow" style="text-decoration: underline;">Двухместные</font><font class="lead-yellow">(25 номеров в категории):</font></div>
+    <div align="center"><font class="lead-black">Номер состоит из спальни, санузел совмещен, также доступна лоджия. <br>Рассчитан на 2 человек. Суточный тариф составляет </font><font class="lead-yellow">2 000 рублей</font></div>
+    <div align="center"><font class="lead-black">Для бронирования выберите один из номеров аппартаментов:</font><font class="lead-yellow">№275-№299</font></div>
+
+    <!--Слайдшоу Комфортов-->
+    <div class="slideshow-container">
+        <div class="mySlides4 fade">
+            <img src="@Url.Content("~/Images/Nomera/img_komfort_1.jpg")" alt="" />
+        </div>
+
+        <div class="mySlides4 fade">
+            <img src="@Url.Content("~/Images/Nomera/img_komfort_2.jpg")" alt="" />
+        </div>
+
+        <div class="mySlides4 fade">
+            <img src="@Url.Content("~/Images/Nomera/img_komfort_3.jpg")" alt="" />
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1, 3)">❮</a>
+        <a class="next" onclick="plusSlides(1, 3)">❯</a>
+    </div>
+
+    <!--Постскриптум комфорта-->
+    <div align="center"><font class="lead-black" style="font-size: 25px; font-style:italic;">Номера в категории «Комфорт» - отличный выбор для тех, кто заботится о своем комфорте и бюджете. Уютные номера идеально подойдут для приятного отпуска, деловых поездок или праздников.</font></div>
+    <div><font class="lead-black" style="font-style:italic;">Вам будут доступны такие услуги, как:</font></div>
+    <ul style="list-style-type: disc; padding-left: 10px;">
+        <li><font class="lead-black" style="font-style:italic;">Дополнительная уборка (по запросу)</font></li>
+        <li><font class="lead-black" style="font-style:italic;">Детская кроватка/люлька-качалка в номер</font></li>
+    </ul>
+
+    <!--Эконом-->
+    <div align="center"><a class="special" style="font-size: 40px;" id="ekonom" href="#categories">Эконом</a></div>
+
+    <div align="center"><font class="lead-black" style="font-size: 30px;">Данная категория включает номера по следующим подкатегориям:</font></div>
+    <div align="center"><font class="lead-yellow" style="text-decoration: underline;">Четырёхместные</font><font class="lead-yellow">(25 номеров в категории):</font></div>
+    <div align="center"><font class="lead-black">Номер состоит из спальни, санузел совмещен. <br>Рассчитан на 4 человек (2 двуспальные кровати). Суточный тариф составляет </font><font class="lead-yellow">1500 рублей</font></div>
+    <div align="center"><font class="lead-black">Для бронирования выберите один из номеров аппартаментов:</font><font class="lead-yellow">№100-№124</font></div>
+
+    <div align="center"><font class="lead-yellow" style="text-decoration: underline;">Трёхместные</font><font class="lead-yellow">(25 номеров в категории):</font></div>
+    <div align="center"><font class="lead-black">Номер состоит из спальни, санузел совмещен. <br>Рассчитан на 3 человек (двуспальная и односпальная кровать). Суточный тариф составляет </font><font class="lead-yellow">1 000 рублей</font></div>
+    <div align="center"><font class="lead-black">Для бронирования выберите один из номеров аппартаментов:</font><font class="lead-yellow">№125-№149</font></div>
+
+    <div align="center"><font class="lead-yellow" style="text-decoration: underline;">Двухместные</font><font class="lead-yellow">(50 номеров в категории):</font></div>
+    <div align="center"><font class="lead-black">Номер состоит из спальни, санузел совмещен. <br>Рассчитан на 2 человек. Суточный тариф составляет </font><font class="lead-yellow">850 рублей</font></div>
+    <div align="center"><font class="lead-black">Для бронирования выберите один из номеров аппартаментов:</font><font class="lead-yellow">№150-№199</font></div>
+
+    <!--Слайдшоу экономов-->
+    <div class="slideshow-container">
+        <div class="mySlides5 fade">
+            <img src="@Url.Content("~/Images/Nomera/img_ekonom_1.jpg")" alt="" />
+        </div>
+
+        <div class="mySlides5 fade">
+            <img src="@Url.Content("~/Images/Nomera/img_ekonom_2.jpg")" alt="" />
+        </div>
+
+        <div class="mySlides5 fade">
+            <img src="@Url.Content("~/Images/Nomera/img_ekonom_3.jpg")" alt="" />
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1, 4)">❮</a>
+        <a class="next" onclick="plusSlides(1, 4)">❯</a>
+    </div>
+
+    <!--Постскриптум экономов-->
+    <div align="center"><font class="lead-black" style="font-size: 25px; font-style:italic;">Номера в категории «Эконом» - наш самый бюджетный вариант. Отлично подойдет для любителей скромности и уюта.</font></div>
+
+    <script>
+var slideIndex = [1,1,1,1,1];
+var slideId = ["mySlides1", "mySlides2", "mySlides3","mySlides4","mySlides5"]
+for(var i = 0; i < 5; i++){
+	showSlides(1, i);
+}
+
+function plusSlides(n, no) {
+  showSlides(slideIndex[no] += n, no);
+}
+
+function showSlides(n, no) {
+  var i;
+  var x = document.getElementsByClassName(slideId[no]);
+  if (n > x.length) {slideIndex[no] = 1}
+  if (n < 1) {slideIndex[no] = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  x[slideIndex[no]-1].style.display = "block";
+}
+    </script>
+</body>
+</html>

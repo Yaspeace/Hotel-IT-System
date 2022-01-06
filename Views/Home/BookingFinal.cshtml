@@ -1,0 +1,25 @@
+﻿@model Booking 
+@{
+    if (ViewBag.Entered)
+        Layout = "~/Views/Shared/_Layout2.cshtml";
+    else
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.openedView = "booking";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link type="text/css" rel="stylesheet" href="@Url.Content("~/css/site.css")" />
+    <title>Бронирование</title>
+</head>
+<body>
+    <div align="center">
+        <font class="upmenu">Вы забронировали номер @Model.room_number <br />
+        Итоговая цена составила @Model.summ
+        </font>
+    </div>
+</body>
+</html>

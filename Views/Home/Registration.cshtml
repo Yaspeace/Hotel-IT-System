@@ -1,0 +1,48 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link type="text/css" rel="stylesheet" href="@Url.Content("~/css/site.css")" />
+    <title>Регистрация|Личный кабинет</title>
+</head>
+<body>
+    <form method="post" action="/Home/RegProcess">
+        <table>
+            <tr>
+                <td><font class="upmenu" style="font-size: 20px;">Ваша фамилия:</font></td>
+                <td><input type="text" name="surname" class="register" placeholder="" style="font-size: 20px;" /></td>
+            </tr>
+            <tr>
+                <td><font class="upmenu" style="font-size: 20px;">Ваше имя:</font></td>
+                <td><input type="text" name="name" class="register" placeholder="" style="font-size: 20px;" /></td>
+            </tr>
+            <tr>
+                <td><font class="upmenu" style="font-size: 20px;">Отчество (если есть):</font></td>
+                <td><input type="text" name="patronym" class="register" placeholder="" style="font-size: 20px;" /></td>
+            </tr>
+            <tr>
+                <td><font class="upmenu" style="font-size: 20px;">Придумайте логин:</font></td>
+                <td><input type="text" name="userName" class="register" placeholder="" style="font-size: 20px;" /></td>
+            </tr>
+            <tr>
+                <td><font class="upmenu" style="font-size: 20px;">Придумайте пароль:</font></td>
+                <td><input type="password" name="password" class="register" placeholder="" style="font-size: 20px;" /></td>
+            </tr>
+            <tr>
+                <td><font class="upmenu" style="font-size: 20px;">Повторите пароль:</font></td>
+                <td><input type="password" name="checkPassword" class="register" placeholder="" style="font-size: 20px;" /></td>
+            </tr>
+        </table>
+        <div style="margin-top: 1em; margin-bottom: 1em;"><input class="enter-btn" value="Зарегистрироваться" type="submit" /></div>
+    </form>
+    @if (ViewBag.NotSamePasswords)
+    {
+        <div><font class="upmenu" style="color: black;">Пароли не совпадают!</font></div>
+    }
+</body>
+</html>

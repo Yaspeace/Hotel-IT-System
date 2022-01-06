@@ -1,0 +1,82 @@
+﻿@model BookingTableModel 
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link type="text/css" rel="stylesheet" href="@Url.Content("~/css/site.css")" />
+    <title>Администратор|Таблица броней</title>
+</head>
+<body>
+    <div>
+        <a class="enter-btn" href="/Home/AdminLK">&#8592;Назад</a>
+    </div>
+    <div align="center">
+        <font class="lead-black">Информация о бронях за год:</font>
+    </div>
+    <div align="center" style="margin-top: 20px;">
+        <font class="lead-black">Поиск по ФИО клиента:</font><input type="text" class="register" style="font-size: 20px;" />
+    </div>
+    <div class="flowed-table" style="height: 500px;">
+        <table class="inform">
+            <thead>
+                <tr>
+                    <td>ФИО клиента</td>
+                    <td>Дата брони</td>
+                    <td>Дата въезда</td>
+                    <td>Дата выезда</td>
+                    <td>Номер</td>
+                    <td>Категория</td>
+                    <td>Взрослых</td>
+                    <td>Детей</td>
+                    <td>Сумма к оплате</td>
+                    <td>Статус</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var b in Model.BookingsInfo)
+                {
+                <tr>
+                    <td>@(Model.GetClientFIO(b.cl_id))</td>
+                    <td>@b.booking_date.ToString("dd-MM-yyyy")</td>
+                    <td>@b.check_in.ToString("dd-MM-yyyy")</td>
+                    <td>@b.check_out.ToString("dd-MM-yyyy")</td>
+                    <td>@b.room</td>
+                    <td>@b.cat_name</td>
+                    <td>@(b.adults_num > 0 ? b.adults_num.ToString() : "-")</td>
+                    <td>@(b.childs_num > 0 ? b.childs_num.ToString() : "-")</td>
+                    <td>@b.summ р.</td>
+                    @if (b.status == "ok")
+                    {
+                        <td>бронь</td>
+                        <td><a class="enter-btn" style="padding: 0 0 0 0;border-radius: 0;box-shadow:none;" href="/Home/BookingTable?toDo=tocancel&booking_id=@b.id">отменить</a>
+                        <a class="enter-btn" style="padding: 0 0 0 0;border-radius: 0;box-shadow:none;" href="/Home/BookingTable?toDo=tobegin&booking_id=@b.id">въезд</a></td>
+                    }
+                    else if (b.status == "cancel")
+                    {
+                        <td>отменен</td>
+                        <td><a class="enter-btn" style="padding: 0 0 0 0;border-radius: 0;box-shadow:none;" href="/Home/BookingTable?toDo=took&booking_id=@b.id">возобновить</a></td>
+                    }
+                    else if (b.status == "begin")
+                    {
+                        <td>живёт</td>
+                        <td><a class="enter-btn" style="padding: 0 0 0 0;border-radius: 0;box-shadow:none;" href="/Home/BookingTable?toDo=toend&booking_id=@b.id">выезд</a></td>
+                    }
+                    else
+                    {
+                        <td colspan="2">выезд</td>
+                    }
+                    <td><a href="/Home/BookingMoreInfo?booking_id=@b.id">&#8230;</a></td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

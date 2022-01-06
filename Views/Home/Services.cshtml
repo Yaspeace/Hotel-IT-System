@@ -1,0 +1,60 @@
+﻿@{
+    if (ViewBag.Entered)
+        Layout = "~/Views/Shared/_Layout2.cshtml";
+    else
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.openedView = "services";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link type="text/css" rel="stylesheet" href="@Url.Content("~/css/site.css")" />
+    <title>Услуги</title>
+</head>
+
+<body>
+    <div align="center"><font class="index-font1">Lord Of The Winds предлагает нашим гостям широкий спектр услуг.<br>Предлагаем Вашему вниманию небольшой экскурс по нашим услугам:</font></div>
+
+    <div align="center"><font class="lead-black" style="font-weight: bold; font-size: 40px;">Услуги общего доступа:</font></div>
+    <div align="center"><font class="lead-black" style="font-size: 25px;">(данная категория услуг оплачивается по факту предоставления)</font></div>
+
+    <div align="center"><font class="lead-yellow" style="font-size: 30px;">&#9679;&nbsp;Наши услуги:</font></div>
+    <div class="usluga"><img src="@Url.Content("~/Images/logos/logo restaran.png")" alt="" /><font class="lead-yellow">Ресторан: </font><font class="lead-black">мы предлагаем Вам блюда французской и итальянской кухни, а также изысканные азиатские закуски и напитки.</font></div>
+    <div class="usluga"><img src="@Url.Content("~/Images/logos/logo bar.png")" alt="" /><font class="lead-yellow">Бар: </font><font class="lead-black">широкий выбор алкогольных и безалкогольных коктейлей, соки, фирменные лимонады и многое другое.</font></div>
+    <div class="usluga"><img src="@Url.Content("~/Images/logos/logo stolovka.png")" alt="" /><font class="lead-yellow">Столовая: </font><font class="lead-black">окунитесь в удивительный мир русской, украинской, белорусской и узбекской кухни и почувствуйте вкус этой жизни.</font></div>
+    <div class="usluga"><img src="@Url.Content("~/Images/logos/logo pra4ka.png")" alt="" /><font class="lead-yellow">Прачечная: </font><font class="lead-black">стирка и химчистка одежды (ежедневно с 8:00 до 21:00).</font></div>
+    <div class="usluga"><img src="@Url.Content("~/Images/logos/logo spa.png")" alt="" /><font class="lead-yellow">СПА-центр: </font><font class="lead-black">тайский массаж, гидромассаж, финская сауна и русская баня.</font></div>
+    <div class="usluga"><img src="@Url.Content("~/Images/logos/logo pool.png")" alt="" /><font class="lead-yellow">Бассейн: </font><font class="lead-black">на территори отеля расположен взрослый и детский бассейн с водными аттракционами.</font></div>
+    <div class="usluga"><img src="@Url.Content("~/Images/logos/logo parking.png")" alt="" /><font class="lead-yellow">Автопаркинг: </font><font class="lead-black">на 350 машиномест. Включает крытую и открытую зоны.</font></div>
+    <div class="usluga"><img src="@Url.Content("~/Images/logos/logo taxi.png")" alt="" /><font class="lead-yellow">Важный-бумажный гость: </font><font class="lead-black">Вас встретит/проводит такси от аэропорта, ж/д или морского вокзала.</font></div>
+
+    <div align="center"><font class="lead-yellow" style="font-size: 30px;">&#9679;&nbsp;Услуги наших партнёров:</font></div>
+
+    <div align="center"><font class="lead-black" style="font-weight: bold; font-size: 40px;">Экскурсионные туры по г. Севастополь</font></div>
+    <div align="center"><font class="lead-black" style="font-size: 25px;">(стоимость уточняется у оператора)</font></div>
+    <div class="usluga"><img src="@Url.Content("~/Images/logos/logo excurs.png")" alt="" /><font class="lead-yellow">Тур 1: "Севастополь исторический"</font><br><font class="lead-black">Продолжительность: ~3,5 часа. Экскурсия включает в себя две части &#8212; автобусный тур по историчесикм местам города и морскую прогулку. Мы расскажем Вам всё об истории Севастополя &#8212; от основания до современности. Вы сможете посетить самые значимые исторические места центра города и Херсонеса Таврического.</font></div>
+    <div class="usluga"><img src="@Url.Content("~/Images/logos/logo excurs.png")" alt="" /><font class="lead-yellow">Тур 2: "Севастополь культурный"</font><br><font class="lead-black">Окунитесь в удивительный мир севастопольского театра, изобразительного искусства и музыки. Мы предлагаем Вашему вниманию экскурсии по музеям и картинным галереям, а также расскажем историю театра от амфитеатров до современного сценического искусства. По завершении Вы сможете бесплатно посетить один из спектаклей или концертов симфонической музыки.</font></div>
+    <div class="usluga"><img src="@Url.Content("~/Images/logos/logo excurs.png")" alt="" /><font class="lead-yellow">Тур 3: "Севастополь завораживающий"</font><br><font class="lead-black">Предлагаем вам 4х часовую экскурсию по вечернему центру города, где мы расскажем Вам удивительные факты из жизни Севастополя, затем Вас ждёт морская экскурсия "Артбухта - пл. Нахимова" под живую музыка, а также дегустация изысканных крымских вин.</font></div>
+
+    <div align="center"><font class="lead-black" style="font-weight: bold; font-size: 40px;">Каршеринг</font></div>
+    <div align="center"><font class="lead-black" style="font-size: 25px;">(подробности уточняйте у оператора 22-33-22)</font></div>
+    <div class="usluga"><img src="@Url.Content("~/Images/logos/logo carsharing.png")" alt="" /><font class="lead-yellow">Посуточная аренда авто по категориям: </font><br><font class="lead-yellow">&#8226; "Эконом" </font><font class="lead-black">(Renault Logan, Lada Vesta, Daewoo Matiz)</font><br><font class="lead-yellow">&#8226; "Комфорт" </font><font class="lead-black">(Hundai Solaris, Kia Rio, Opel Astra)</font><br><font class="lead-yellow">&#8226; "Бизнес" </font><font class="lead-black">(Mersedes E220, BMW M3, Infinity G)</font><br><font class="lead-yellow">&#8226; "Спорт" </font><font class="lead-black">(BMW M5, Porsche 911)</font><br><font class="lead-yellow">&#8226; "Семейный" </font><font class="lead-black">(Volkswagen Multiwen)</font></div>
+
+    <div align="center"><font class="lead-black" style="font-weight: bold; font-size: 40px;">Услуги в номер:</font></div>
+    <div align="center"><font class="lead-black" style="font-size: 25px;">(данная категория услуг оплачивается при бронировании)</font></div>
+
+    <div align="center"><font class="lead-yellow" style="font-size: 30px;">&#9679;&nbsp;Общие:</font></div>
+    <div class="usluga"><img src="@Url.Content("~/Images/logos/logo food.png")" alt="" /><font class="lead-yellow">Еда в номер</font></div>
+    <div class="usluga"><img src="@Url.Content("~/Images/logos/logo cat.png")" alt="" /><font class="lead-yellow">Котик в номер</font></div>
+    <div class="usluga"><img src="@Url.Content("~/Images/logos/logo cleaning.png")" alt="" /><font class="lead-yellow">Дополнительная уборка</font></div>
+
+    <div align="center"><font class="lead-yellow" style="font-size: 30px;">&#9679;&nbsp;VIP:</font></div>
+    <div class="usluga"><img src="@Url.Content("~/Images/logos/logo bar.png")" alt="" /><font class="lead-yellow">Мини-бар в номере </font><font class="lead-black">(доступно в номерах люкс)</font></div>
+    <div class="usluga"><img src="@Url.Content("~/Images/logos/logo bed.png")" alt="" /><font class="lead-yellow">Детская кроватка/люлька-качалка в номер </font><font class="lead-black">(доступно во всех категориях, кроме "Эконом")</font></div>
+    <div class="usluga"><img src="@Url.Content("~/Images/logos/logo nyanya.png")" alt="" /><font class="lead-yellow">Услуги няни/гувернантки </font><font class="lead-black">(доступно во всех категориях, кроме "Эконом" и "Комфорт")</font></div>
+    <div class="usluga"><img src="@Url.Content("~/Images/logos/logo dogsit.png")" alt="" /><font class="lead-yellow">Догситтер и услуги для ваших питомцев </font><font class="lead-black">(доступно во всех категориях, кроме "Эконом" и "Комфорт")</font></div>
+</body>
+</html>

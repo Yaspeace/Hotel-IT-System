@@ -1,0 +1,74 @@
+﻿@model UserBookingsModel
+@{
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link type="text/css" rel="stylesheet" href="@Url.Content("~/css/site.css")" />
+    <title>Личный кабинет|Брони</title>
+</head>
+<body>
+    <div>
+        <a class="enter-btn" href="/Home/UserLK">&#8592;Назад</a>
+    </div>
+    <div align="center" style="margin-top: 1em;"><font class="upmenu">Информация о ваших бронированиях (до момента фактического заселения):</font></div>
+    <div class="flowed-table">
+        @foreach (var b in ViewBag.clientBookings)
+        {
+        <div class="booking-backgr" style="padding-bottom: 1em;">
+            <table>
+                <tr>
+                    <td><font class="booking-info-main">Фамилия:&nbsp;</font></td>
+                    <td><font class="booking-info">@ViewBag.clnt.client_surname</font></td>
+                    <td><font class="booking-info-main">Имя:&nbsp;</font></td>
+                    <td><font class="booking-info">@ViewBag.clnt.client_name</font></td>
+                    <td><font class="booking-info-main">Отчество:&nbsp;</font></td>
+                    <td><font class="booking-info">@(ViewBag.clnt.client_patronym == "" ? "-" : ViewBag.clnt.client_patronym)</font></td>
+                </tr>
+                <tr>
+                    <td><font class="booking-info-main">Дата заезда:&nbsp;</font></td>
+                    <td><font class="booking-info">@b.check_in.Date.ToString("dd.MM.yyyy")</font></td>
+                    <td><font class="booking-info-main">Дата выезда:&nbsp;</font></td>
+                    <td><font class="booking-info">@b.check_out.Date.ToString("dd.MM.yyyy")</font></td>
+                </tr>
+                <tr>
+                    <td><font class="booking-info-main">Взрослых:&nbsp;</font></td>
+                    <td><font class="booking-info">@b.adults_num</font></td>
+                    <td><font class="booking-info-main">Детей:&nbsp;</font></td>
+                    <td><font class="booking-info">@(b.childs_num == 0 ? "-" : b.childs_num.ToString())</font></td>
+                </tr>
+                <tr>
+                    <td><font class="booking-info-main">Номер:&nbsp;</font></td>
+                    <td><font class="booking-info">@b.room</font></td>
+                    <td><font class="booking-info-main">Категория:&nbsp;</font></td>
+                    <td><font class="booking-info">@b.cat_name</font><br></td>
+                    <td><font class="booking-info-main">Подкатегория:&nbsp;</font></td>
+                    <td><font class="booking-info">@b.scat_name</font><br></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><font class="booking-info-main">Заказанные услуги:&nbsp;</font></td>
+                    <td><font class="booking-info-main">Общая стоимость:</font></td>
+                    <td><font class="booking-info">@b.summ</font></td>
+                </tr>
+                @foreach (OrderedService os in Model.oservices)
+                {
+                    if (os.booking_id == b.id)
+                    {
+                        Service serv = Model.services.Where(s => s.id == os.service_id).First();
+                        <tr>
+                            <td colspan="2"><font class="booking-info">@serv.name</font><br></td>
+                        </tr>
+                    }
+                }
+            </table>
+            <div align="right"><a class="enter-btn" href="/Home/CancelBooking?booking_id=@b.id.ToString()" style="margin-right: 1em;">отменить</a></div>
+        </div>
+        }
+    </div>
+    <div align="center"><font class="index-font1" style="font-size: 30px;">Уважаемый Гость, вы можете отменить любое ваше бронирование до момента фактического заселения в отель!</font></div>
+</body>
+</html>

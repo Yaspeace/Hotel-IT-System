@@ -1,0 +1,20 @@
+﻿@{
+    if (ViewBag.Entered)
+        Layout = "~/Views/Shared/_Layout2.cshtml";
+    else
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.openedView = "reviews";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link type="text/css" rel="stylesheet" href="@Url.Content("~/css/site.css")" />
+    <title>Гостиница "Lord of the winds"</title>
+</head>
+<body>
+    <a href="/Home/Index"><img src="@Url.Content("~/Images/reviews.png")" /></a>
+</body>
+</html>

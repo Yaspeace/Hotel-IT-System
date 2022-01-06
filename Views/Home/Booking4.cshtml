@@ -1,0 +1,40 @@
+﻿@{
+    if (ViewBag.Entered)
+        Layout = "~/Views/Shared/_Layout2.cshtml";
+    else
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.openedView = "booking";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link type="text/css" rel="stylesheet" href="@Url.Content("~/css/site.css")" />
+    <title>Бронирование</title>
+</head>
+<body>
+    <!--Выбор услуг-->
+    <form method="post" action="/Home/Booking5">
+        <div id="fourth" class="booking-backgr" style="margin-bottom: 15px;padding-top:1em;padding-bottom:1em;">
+            <div style="margin-left:2em;">
+                <div><font class="lead-black">Выберите услуги в номер:</font></div>
+                <div style="margin-left:1em;">
+                    @foreach (Service s in ViewBag.Servs)
+                    {
+                        if (s.type_id == 1)
+                        {
+                            <input name="services" type="checkbox" value="@s.id" /><font class="lead-black">@s.name (@s.price р/сут.)</font><br>
+                        }
+                    }
+                </div>
+            </div>
+            <div style="margin-top:2em;">
+                <input class="enter-btn" style="margin-left: 1em;margin-top: 2em;" type="submit" value="Перейти к вводу личных данных" />
+                <!--<a class="enter-btn-cancel" style="margin-left:1em;" href="">Вернуться</a>-->
+            </div>
+        </div>
+    </form>
+</body>
+</html>
